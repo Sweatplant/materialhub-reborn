@@ -9,15 +9,24 @@
 <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 <script src="scripts.js"></script>
 </head>
-<body>
+<body id="iotd">
 	<div class="menubar">
 		<h2 class="header">Materialhub Reborn</h2>
 		<h3 id="openbtn" class="aot">☰</h3>
 	</div>
 		<div id="settings">
-			<h3 class="menuitem">Enter your name:</h3>
+			<div style="width: 9000%; margin-left:30px">
+			<h2>Settings</h2>
+			<input type="text" placeholder="Enter Name Here" class="settingsinput" id="nameinput"></input>
+			<button type="button" class="round confirmbutton" id="snc">✓</button>
+			<br>
+			<input type="text" placeholder="Custom Wallpaper Url" class="settingsinput" id="wallpaperinput"></input>
+			<button type="button" class="round confirmbutton" id="appwpp">✓</button>
+			<button type="button" class="round removebutton" id="remwpp">×</button>
+			</div>
 		</div>
-		<div id="closebtn">
+		<div id="close">
+			<button class="round closebutton"><i style="font-size:200%">×</i></button>
 		</div>
 	<div class="main">
 		<center>
