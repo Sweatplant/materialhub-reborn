@@ -114,10 +114,12 @@ document.addEventListener('DOMContentLoaded', function() {
   clock(), hello(), wp();
 	document.getElementById("openbtn").addEventListener('click', function() {
 		document.getElementById("settings").style.width = "300px";
+		document.getElementById("settings").style.padding = "0 10px 0 0";
 		document.getElementById("close").style.width = "100%";
 	});
 	document.getElementById("close").addEventListener('click', function() {
 		document.getElementById("settings").style.width = "0";
+		document.getElementById("settings").style.padding = "0 0 0 0";
 		document.getElementById("close").style.width = "0";
 	});
 	var snc = document.getElementById('snc');
