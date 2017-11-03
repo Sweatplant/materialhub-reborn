@@ -165,10 +165,20 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("settings").style.padding = "0 10px 0 0";
         document.getElementById("close").style.width = "100%";
     });
+    document.getElementById("todobutton").addEventListener('click', function() {
+        document.getElementById("todomenu").style.height = "auto";
+        document.getElementById("todomenu").style.padding = "5px 5px 0px 5px";
+	document.getElementById("closetodobutton").style.visibility = "visible";
+    });
     document.getElementById("close").addEventListener('click', function() {
         document.getElementById("settings").style.width = "0";
         document.getElementById("settings").style.padding = "0 0 0 0";
         document.getElementById("close").style.width = "0";
+    });
+    document.getElementById("closetodobutton").addEventListener('click', function() {
+        document.getElementById("todomenu").style.height = "0";
+        document.getElementById("todomenu").style.padding = "0px 5px 0px 5px";
+	document.getElementById("closetodobutton").style.visibility = "hidden";
     });
     var snc = document.getElementById('snc');
     snc.addEventListener('click', function() {
