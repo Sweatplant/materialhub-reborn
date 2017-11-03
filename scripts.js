@@ -15,7 +15,7 @@ function wp(){
 document.getElementById("iotd").style.background = burl;
 }
 else if (localStorage.wallpaper !== undefined){
-document.getElementById("iotd").style.background = "url(" + localStorage.wallpaper + ") center / cover";
+document.getElementById("iotd").style.background = "url(" + localStorage.wallpaper + ") no-repeat center/cover fixed";
 }
 }
 function clock() {
