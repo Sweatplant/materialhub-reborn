@@ -48,4 +48,14 @@ function show() {
 }
  
 document.getElementById('add').addEventListener('click', add);
+document.getElementById('task').addEventListener("keydown", function() {
+    todochar(event);
+});
 show();
+
+function todochar(event) {
+    var char = event.keyCode;
+    if (char == 13) {
+        add();
+    }
+}
