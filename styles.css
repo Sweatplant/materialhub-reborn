@@ -164,3 +164,9 @@ input[type=text] {
 #add {
 	margin-right: 50px;
 }
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}

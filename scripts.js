@@ -46,7 +46,7 @@ function hex2rgb(hex, opacity) {
 
     if (typeof opacity != 'undefined') h.push(opacity);
 
-    return 'rgba(' + h.join(',') + ')';
+    return 'rgba(' + h.join(',');
 }
 
 function hello() {
@@ -143,19 +143,30 @@ function removecustwpp() {
 
 function appcolor() {
     var cpickhex = document.getElementById("cpicker").value;
-    var cpickrgb = hex2rgb(cpickhex, 0.6);
-    localStorage.cpickrgb = cpickrgb;
+    var cpickrgb = hex2rgb(cpickhex);
+    localStorage.cpickrgbmenubar = cpickrgb + ", 0.6)";
+    localStorage.cpickrgbtodobutton = cpickrgb + ", 0.3)";
+    localStorage.cpickrgbtodosettings = cpickrgb + ", 0.9)";
+    document.getElementById("settings").classList.add("notransition");
+    document.getElementById("todomenu").classList.add("notransition");
 }
 
 function remcolor() {
-    localStorage.removeItem("cpickrgb");
+    localStorage.removeItem("cpickrgbmenubar");
 }
 
 function loadcolor() {
-    if (localStorage.cpickrgb === undefined) {
+    if (localStorage.cpickrgbmenubar === undefined) {
         document.getElementById("menubar").style.backgroundColor = "rgba(50, 50, 50, 0.6)";
-    } else if (localStorage.cpickrgb !== undefined) {
-        document.getElementById("menubar").style.backgroundColor = localStorage.cpickrgb;
+	document.getElementById("todobutton").style.backgroundColor = "rgba(200, 200, 200, 0.3)";
+	document.getElementById("todomenu").style.backgroundColor = "rgba(50, 50, 50, 0.9)";
+	document.getElementById("settings").style.backgroundColor = "rgba(50, 50, 50, 0.9)";
+
+    } else if (localStorage.cpickrgbmenubar !== undefined) {
+        document.getElementById("menubar").style.backgroundColor = localStorage.cpickrgbmenubar;
+        document.getElementById("todobutton").style.backgroundColor = localStorage.cpickrgbtodobutton;
+	document.getElementById("todomenu").style.backgroundColor = localStorage.cpickrgbtodosettings;
+	document.getElementById("settings").style.backgroundColor = localStorage.cpickrgbtodosettings;
     }
 }
 document.addEventListener('DOMContentLoaded', function() {
@@ -174,6 +185,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("settings").style.width = "0";
         document.getElementById("settings").style.padding = "0 0 0 0";
         document.getElementById("close").style.width = "0";
+	document.getElementById("settings").offsetHeight;
+	document.getElementById("settings").classList.remove("notransition")
+	document.getElementById("todomenu").offsetHeight;
+	document.getElementById("todomenu").classList.remove("notransition")
     });
     document.getElementById("closetodobutton").addEventListener('click', function() {
         document.getElementById("todomenu").style.maxHeight = "0px";
