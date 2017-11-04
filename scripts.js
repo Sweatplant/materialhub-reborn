@@ -211,12 +211,8 @@ document.addEventListener('DOMContentLoaded', function() {
     remcel.addEventListener('click', function() {
         remcolor(), loadcolor();
     });
-    document.getElementById('nameinput').addEventListener("keydown", function() {
-        namechar(event);
-    });
-    document.getElementById('wallpaperinput').addEventListener("keydown", function() {
-        wppchar(event);
-    });
+    document.getElementById('nameinput').onkeydown = namechar;
+    document.getElementById('wallpaperinput').onkeydown = wppchar;
     document.getElementById('cpicker').addEventListener("input", function() {
         appcolor(), loadcolor();
     });

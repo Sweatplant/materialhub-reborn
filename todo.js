@@ -48,9 +48,7 @@ function show() {
 }
  
 document.getElementById('add').addEventListener('click', add);
-document.getElementById('task').addEventListener("keydown", function() {
-    todochar(event);
-});
+document.getElementById('task').onkeydown = todochar;
 show();
 
 function todochar(event) {
